@@ -1,0 +1,100 @@
+/*------------------------
+ ---- UTILITY CLASSES ----
+------------------------*/
+
+/*
+
+ ---- MARGINS & PADDINGS ----
+*/
+
+@for $i from 1 through 10 {
+	.px-#{$i} {
+		padding-inline: $i * 0.125rem;
+	}
+	.py-#{$i} {
+		padding-block: $i * 0.125rem;
+	}
+	.mx-#{$i} {
+		margin-inline: $i * 0.125rem;
+	}
+	.my-#{$i} {
+		margin-block: $i * 0.125rem;
+	}
+	.mt-#{$i} {
+		margin-top: $i * 0.125rem;
+	}
+	.mb-#{$i} {
+		margin-bottom: $i * 0.125rem;
+	}
+	.ml-#{$i} {
+		margin-left: $i * 0.125rem;
+	}
+	.mr-#{$i} {
+		margin-right: $i * 0.125rem;
+	}
+}
+
+/*
+ ---- GENERAL ----
+*/
+
+.flex {
+	display: flex;
+	gap: var(--gap, 1rem);
+}
+
+.grid {
+	display: grid;
+	gap: var(--gap, 1rem);
+}
+
+.d-block {
+	display: block;
+}
+.d-inline {
+	display: inline;
+}
+
+.flow > *:where(:not(:first-child)) {
+	margin-top: var(--flow-space, 1rem);
+}
+
+.flow--space-small {
+	--flow-space: 0.75rem;
+}
+
+.container {
+	padding-inline: 2em;
+	margin-inline: auto;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip-path: rect(0, 0, 0, 0);
+	white-space: nowrap; /* added line */
+	border: 0;
+}
+
+.skip-to-content {
+	position: absolute;
+	z-index: 9999;
+	background: hsl(var(--clr-white));
+	color: hsl(var(--clr-dark));
+	padding: 0.5em 1em;
+	margin-inline: auto;
+	transform: translateY(-100%);
+	transition: transform 250ms ease-in;
+}
+
+.skip-to-content:focus {
+	transform: translateY(0);
+}
+
+.capitalize{
+	text-transform: capitalize;
+}

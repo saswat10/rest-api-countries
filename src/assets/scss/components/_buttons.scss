@@ -1,0 +1,25 @@
+@use 'sass:color';
+@use '../abstract/variables' as *;
+$box-shadow:0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+
+[type='button'],
+[type='reset'],
+[type='submit'] {
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	background-color: var(--elements);
+  box-shadow: $box-shadow;
+}
+
+[type='button']:hover,
+[type='reset']:hover,
+[type='submit']:hover,
+[type='button']:focus,
+[type='reset']:focus,
+[type='submit']:focus,
+[type='button']:active,
+[type='reset']:active,
+[type='submit']:active {
+	background-color: var(--hover);
+}

@@ -1,0 +1,43 @@
+@use '../abstract/variables' as *;
+@use 'sass:color';
+$hover-light : darken($white, 10%) ;
+$hover-dark : lighten($darkBlue, 10%);
+
+@mixin light-theme {
+	--primary-text: #{$veryDarkBlueText};
+	--elements: #{$white};
+	--input: #{$darkGray};
+	--background: #{$veryLightGray};
+	--hover:#{$hover-light};
+
+	color-scheme: light;
+}
+
+@mixin dark-theme {
+	--primary-text: #{$white};
+	--elements: #{$darkBlue};
+	--input: #{$darkGray};
+	--background: #{$veryDarkBlueBg};
+	--hover: #{$hover-dark};
+
+	color-scheme: dark;
+}
+
+.light {
+	@include light-theme;
+}
+
+.dark {
+	@include dark-theme;
+}
+
+// OS Default.
+:root:not(.light):not(.dark) {
+	@media (prefers-color-scheme: light) {
+		@include light-theme;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		@include dark-theme;
+	}
+}
