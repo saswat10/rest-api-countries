@@ -3,7 +3,8 @@ import { HiSun, HiMoon } from 'react-icons/hi'
 import { RxHalf2 } from 'react-icons/rx'
 
 const Theme = () => {
-	const [theme, setTheme] = useState(localStorage.getItem('theme'))
+	const local = localStorage.getItem('theme')
+	const [theme, setTheme] = useState(local?local:'auto')
 	useEffect(() => {
 		document.documentElement.classList = theme
 	}, [theme])
